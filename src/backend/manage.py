@@ -12,12 +12,12 @@ except ImportError as exc:
         "available on your PYTHONPATH environment variable? Did you "
         "forget to activate a virtual environment?"
     ) from exc
-execute_from_command_line(sys.argv)
 
 
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')
+    execute_from_command_line(sys.argv)
 
 
 if __name__ == '__main__':
