@@ -1,0 +1,4 @@
+doc/
+README.md
+.gitignore
+.dockerignore
