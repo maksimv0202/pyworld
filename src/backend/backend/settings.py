@@ -35,12 +35,17 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    # django built-in apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # django third-party apps
+    'rest_framework',
+    # created apps
+    'api.apps.ApiConfig',
 ]
 
 MIDDLEWARE = [
@@ -80,6 +85,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ['PSQL_DB_NAME'],
+        'USER': os.environ['PSQL_USER'],
+        'PASSWORD': os.environ['PSQL_PASS'],
+        'HOST': os.environ['PSQL_HOST'],
         'OPTIONS': {},
     }
 }
